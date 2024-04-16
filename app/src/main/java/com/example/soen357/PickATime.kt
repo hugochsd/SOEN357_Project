@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -24,23 +25,34 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MyApp {
-                AppNavigation()
-            }
-        }
+
+@Composable
+fun MyApp() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "myGames") {
+        composable("myGames") { MyGames(navController) }
+        composable("gameInformation") { GameInformation(navController) }
+
     }
 }
 
 @Composable
-fun AppNavigation() {
+fun MyAppTime() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "timePicker") {
-        composable("timePicker") { TimePicker(navController) }
-        composable("secondScreen") { GamePicker() }
+    NavHost(navController = navController, startDestination = "pickATime") {
+        composable("pickATime") { PickATime(navController) }
+        composable("reservation") { Reservation(navController) }
+
+    }
+}
+
+@Composable
+fun MyAppSport() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "PickAGame") {
+        composable("pickAGame") { GamePicker(navController) }
+        composable("joinedGame") { JoinedGame(navController) }
+
     }
 }
 
@@ -54,9 +66,10 @@ fun MyApp(content: @Composable () -> Unit) {
 }
 
 @Composable
-fun TimePicker(navController: NavController) {//E0E0E0
+fun PickATime(navController: NavController) {//E0E0E0
     val buttonColor = Color(0xFF5271FF)
     val backgroundColor = Color(0xFFE0E0E0)
+    val context = LocalContext.current
 
     Scaffold { paddingValues ->
         Column(
@@ -73,7 +86,9 @@ fun TimePicker(navController: NavController) {//E0E0E0
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { /* Handle back action */ },
+                    onClick = { if (context is ComponentActivity) {
+                        context.finish()
+                    } },
                     modifier = Modifier.padding(start = 24.dp),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = buttonColor,
@@ -119,7 +134,7 @@ fun TimePicker(navController: NavController) {//E0E0E0
 
                 ) {
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("reservation") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -130,7 +145,7 @@ fun TimePicker(navController: NavController) {//E0E0E0
                         Text(text = "2:00 to 3:00 PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("reservation")  },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -141,7 +156,7 @@ fun TimePicker(navController: NavController) {//E0E0E0
                         Text(text = "2:00 to 3:00 PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("reservation") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -152,7 +167,7 @@ fun TimePicker(navController: NavController) {//E0E0E0
                         Text(text = "2:00 to 3:00 PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("reservation")  },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -163,7 +178,7 @@ fun TimePicker(navController: NavController) {//E0E0E0
                         Text(text = "2:00 to 3:00 PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("reservation")  },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(

@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,10 +22,10 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun GamePicker() {//E0E0E0
+fun GamePicker(navController: NavController) {
     val buttonColor = Color(0xFF5271FF)
     val backgroundColor = Color(0xFFE0E0E0)
-
+    val context = LocalContext.current
     Scaffold { paddingValues ->
         Column(
             modifier = Modifier
@@ -40,7 +41,9 @@ fun GamePicker() {//E0E0E0
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { /* Handle back action */ },
+                    onClick = { if (context is ComponentActivity) {
+                        context.finish()
+                    } },
                     modifier = Modifier.padding(start = 24.dp),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = buttonColor,
@@ -77,7 +80,7 @@ fun GamePicker() {//E0E0E0
 
                 ) {
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("joinedGame") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -88,7 +91,7 @@ fun GamePicker() {//E0E0E0
                         Text(text = "Jeanne-Mance Court 10 on 01/05/24 at 6:00PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("joinedGame") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -99,7 +102,7 @@ fun GamePicker() {//E0E0E0
                         Text(text = "Jeanne-Mance Court 11 on 11/05/24 at 4:00PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("joinedGame") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -110,7 +113,7 @@ fun GamePicker() {//E0E0E0
                         Text(text = "Jeanne-Mance Court 1 on 12/05/24 at 1:00PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("joinedGame") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -121,7 +124,7 @@ fun GamePicker() {//E0E0E0
                         Text(text = "Jeanne-Mance Court 1 on 13/05/24 at 1:00PM")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("joinedGame") },
                         modifier = Modifier.width(240.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -137,11 +140,11 @@ fun GamePicker() {//E0E0E0
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun GamePickerPreview() {
-    MyApp {
-        GamePicker()
-    }
-}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GamePickerPreview() {
+//    MyApp {
+//        GamePicker()
+//    }
+//}

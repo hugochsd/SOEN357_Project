@@ -21,7 +21,7 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun Reservation() {//E0E0E0
+fun Reservation(navController: NavController) {//E0E0E0
     val buttonColor = Color(0xFF5271FF)
     val backgroundColor = Color(0xFFE0E0E0)
 
@@ -40,7 +40,7 @@ fun Reservation() {//E0E0E0
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { /* Handle back action */ },
+                    onClick = { navController.navigateUp() },
                     modifier = Modifier.padding(start = 24.dp),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = buttonColor,
@@ -180,10 +180,10 @@ fun Reservation() {//E0E0E0
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun ReservationPreview() {
-    MyApp {
-        Reservation()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun ReservationPreview() {
+//    MyApp {
+//        Reservation()
+//    }
+//}

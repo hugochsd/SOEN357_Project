@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,9 +22,10 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun MyGames() {//E0E0E0
+fun MyGames(navController: NavController) {//E0E0E0
     val buttonColor = Color(0xFF5271FF)
     val backgroundColor = Color(0xFFE0E0E0)
+    val context = LocalContext.current
 
     Scaffold { paddingValues ->
         Column(
@@ -40,7 +42,9 @@ fun MyGames() {//E0E0E0
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { /* Handle back action */ },
+                    onClick = {  if (context is ComponentActivity) {
+                        context.finish()
+                    } },
                     modifier = Modifier.padding(start = 24.dp),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = buttonColor,
@@ -78,7 +82,7 @@ fun MyGames() {//E0E0E0
                 ) {
                     Row() {
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = { navController.navigate("gameInformation")  },
                             modifier = Modifier.width(140.dp).height(58.dp),
                             shape = RoundedCornerShape(24.dp),
                             colors = ButtonDefaults.buttonColors(
@@ -90,7 +94,7 @@ fun MyGames() {//E0E0E0
                         }
                         Spacer(modifier = Modifier.width(16.dp))// Space between elements
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = { navController.navigate("gameInformation")},
                             modifier = Modifier.width(140.dp).height(58.dp),
                             shape = RoundedCornerShape(24.dp),
                             colors = ButtonDefaults.buttonColors(
@@ -104,7 +108,7 @@ fun MyGames() {//E0E0E0
                     }
 
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = {navController.navigate("gameInformation") },
                         modifier = Modifier.width(270.dp).height(48.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -115,7 +119,7 @@ fun MyGames() {//E0E0E0
                         Text(text = "Jeanne-Mance Court 1")
                     }
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate("gameInformation")},
                         modifier = Modifier.width(270.dp).height(48.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = ButtonDefaults.buttonColors(
@@ -132,10 +136,10 @@ fun MyGames() {//E0E0E0
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun MyGamesPreview() {
-    MyApp {
-        MyGames()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun MyGamesPreview() {
+//    MyApp {
+//        MyGames()
+//    }
+//}

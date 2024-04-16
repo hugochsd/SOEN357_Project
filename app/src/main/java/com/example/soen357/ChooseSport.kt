@@ -41,12 +41,11 @@ class ChooseSport : AppCompatActivity() {
         buttonIds.forEach { button ->
             button.setOnClickListener {
                 if (JoinOrCreate){
-                    val intent = Intent(this, PickCourt::class.java)
-                    intent.putExtra("SPORT_ID", button.id)
+                    val intent = Intent(this, SportActivity::class.java)
                     startActivity(intent)
                 }
                 else{
-                    val intent = Intent(this, PickCourt::class.java) // NEEDS TO BE CHANGED FOR THE PICK A GAME ACTIVITY
+                    val intent = Intent(this, PickCourt::class.java)
                     intent.putExtra("SPORT_ID", button.id)
                     startActivity(intent)
                 }

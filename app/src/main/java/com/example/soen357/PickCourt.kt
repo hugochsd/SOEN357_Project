@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.sql.Time
 
 class PickCourt : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +41,7 @@ class PickCourt : AppCompatActivity() {
         for (buttonId in buttonIds) {
             val button = findViewById<Button>(buttonId)
             button.setOnClickListener {
-                val intent = Intent(this, PickCourt::class.java).apply { // CHANGE THE ACTIVITY TO THE PICK A TIME PAGE
-                    putExtra("BUTTON_ID", buttonId)
-                }
+                val intent = Intent(this, TimeActivity::class.java)
                 startActivity(intent)
             }
         }

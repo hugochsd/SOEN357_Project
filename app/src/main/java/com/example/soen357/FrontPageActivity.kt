@@ -65,8 +65,8 @@ class FrontPageActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.buttonMyGames).setOnClickListener {
-            // Show a toast indicating that my games activity needs to be added
-            Toast.makeText(this, "Add my games activity", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
         }
 
     }
