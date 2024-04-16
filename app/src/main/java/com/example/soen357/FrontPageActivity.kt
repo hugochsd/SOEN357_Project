@@ -27,14 +27,14 @@ class FrontPageActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.buttonProfile).setOnClickListener {
-            val profileIntent = Intent(this, ProfileSetUpActivity::class.java).apply {//CHANGE THIS TO GO TO THE PROFILE ACTIVITY
-                putExtra("NAME", name)
-                putExtra("USER", user)
-                putExtra("EMAIL", email)
-                putExtra("IMAGE_URI", imageUriString)
+            val profileIntent = Intent(this, ProfileActivity::class.java).apply {//CHANGE THIS TO GO TO THE PROFILE ACTIVITY
+                //putExtra("NAME", name)
+                //putExtra("USER", user)
+                //putExtra("EMAIL", email)
+                //putExtra("IMAGE_URI", imageUriString)
             }
-            //startActivity(profileIntent)
-            Toast.makeText(this, "Need to connect with variables to profile activity", Toast.LENGTH_SHORT).show()
+            startActivity(profileIntent)
+            //Toast.makeText(this, "Need to connect with variables to profile activity", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -58,12 +58,14 @@ class FrontPageActivity : AppCompatActivity() {
         // THESE NEED TO BE ADJUSTED
         findViewById<Button>(R.id.buttonMessages).setOnClickListener {
             // Show a toast indicating that messages activity needs to be added
-            Toast.makeText(this, "Add messages activity", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@FrontPageActivity,MessageActivity::class.java))
+            //Toast.makeText(this, "Add messages activity", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<Button>(R.id.buttonFindPlayer).setOnClickListener {
             // Show a toast indicating that find player activity needs to be added
-            Toast.makeText(this, "Add find player activity", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@FrontPageActivity,MainActivity::class.java))
+            //Toast.makeText(this, "Add find player activity", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<Button>(R.id.buttonMyGames).setOnClickListener {

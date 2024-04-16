@@ -25,6 +25,22 @@
             android:name=".GameActivity"
             android:exported="true"/>
         <activity
+            android:name=".ChatActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"/>
+        <activity
+            android:name=".MessageActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true"/>
+        <activity
             android:name=".TimeActivity"
             android:exported="true"/>
         <activity

@@ -18,8 +18,12 @@ class LoginActivity : ComponentActivity() {
 
         loginButton.setOnClickListener {
 
-            //val intent = Intent(this, FrontPageActivity::class.java)
+            val intent = Intent(this, FrontPageActivity::class.java)
             Toast.makeText(this, "Consider signing up", Toast.LENGTH_SHORT).show()
+
+            startActivity(intent)
+            finish()
+
         }
 
         signUpButton.setOnClickListener {
