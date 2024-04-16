@@ -54,7 +54,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ProfileSetUpActivity"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

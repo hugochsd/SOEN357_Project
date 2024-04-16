@@ -15,8 +15,9 @@ class FrontPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_front_page)
 
         val name = intent.getStringExtra("NAME")
+        val user = intent.getStringExtra("USER")
+        val email = intent.getStringExtra("EMAIL")
         val imageUriString = intent.getStringExtra("IMAGE_URI")
-        val isFromLoginPage = false
 
         findViewById<TextView>(R.id.textView2).text = name
 
@@ -26,13 +27,15 @@ class FrontPageActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.buttonProfile).setOnClickListener {
-            val profileIntent = Intent(this, ProfileActivity::class.java).apply {
+            val profileIntent = Intent(this, ProfileSetUpActivity::class.java).apply {//CHANGE THIS TO GO TO THE PROFILE ACTIVITY
                 putExtra("NAME", name)
+                putExtra("USER", user)
+                putExtra("EMAIL", email)
                 putExtra("IMAGE_URI", imageUriString)
-                putExtra("FROM_LOGIN_PAGE", isFromLoginPage) // Pass the flag
             }
-            startActivity(profileIntent)
-            finish()
+            //startActivity(profileIntent)
+            //finish()
+            Toast.makeText(this, "Need to connect with variables to profile activity", Toast.LENGTH_SHORT).show()
         }
 
 
