@@ -71,6 +71,7 @@ class ProfileSetUpActivity : AppCompatActivity() {
                     putExtra("IMAGE_URI", imageUri?.toString())
                 }
                 startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, "Fill your info first", Toast.LENGTH_SHORT).show()
             }

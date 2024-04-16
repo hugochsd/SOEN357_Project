@@ -34,7 +34,6 @@ class FrontPageActivity : AppCompatActivity() {
                 putExtra("IMAGE_URI", imageUriString)
             }
             //startActivity(profileIntent)
-            //finish()
             Toast.makeText(this, "Need to connect with variables to profile activity", Toast.LENGTH_SHORT).show()
         }
 
