@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FrontPageActivity">
+
+    <Button
+        android:id="@+id/buttonFindPlayer"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#5271FF"
+        android:paddingBottom="64dp"
+        android:text="Find a player"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMessages"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMyGames"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#5271FF"
+        android:paddingBottom="64dp"
+        android:text="My Games"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMessages"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonJoinGame"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#5271FF"
+        android:paddingBottom="64dp"
+        android:text="Join Game"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFindPlayer"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonProfile"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#5271FF"
+        android:text="Profile"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMessages"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#5271FF"
+        android:text="Messages"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_img" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="172dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Name"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/buttonFindCourt"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#5271FF"
+        android:paddingBottom="64dp"
+        android:text="Find a court"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMyGames"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="20dp"
+        android:clickable="false"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFindCourt"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFindCourt"
+        app:layout_constraintStart_toStartOf="@+id/buttonFindCourt"
+        app:layout_constraintTop_toTopOf="@+id/buttonFindCourt"
+        app:srcCompat="@drawable/court_img" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="24dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonJoinGame"
+        app:layout_constraintEnd_toEndOf="@+id/buttonJoinGame"
+        app:layout_constraintStart_toStartOf="@+id/buttonJoinGame"
+        app:layout_constraintTop_toTopOf="@+id/buttonJoinGame"
+        app:srcCompat="@drawable/racket_img" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMyGames"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMyGames"
+        app:layout_constraintStart_toStartOf="@+id/buttonMyGames"
+        app:layout_constraintTop_toTopOf="@+id/buttonMyGames"
+        app:srcCompat="@drawable/my_games_img" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFindPlayer"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFindPlayer"
+        app:layout_constraintStart_toStartOf="@+id/buttonFindPlayer"
+        app:layout_constraintTop_toTopOf="@+id/buttonFindPlayer"
+        app:srcCompat="@drawable/find_player_img" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
