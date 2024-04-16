@@ -3,6 +3,7 @@ package com.example.soen357
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 
@@ -18,12 +19,13 @@ class LoginActivity : ComponentActivity() {
         loginButton.setOnClickListener {
 
             val intent = Intent(this, FrontPageActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Consider signing up", Toast.LENGTH_SHORT).show()
         }
 
         signUpButton.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, ProfileSetUpActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         forgotPasswordButton.setOnClickListener {
